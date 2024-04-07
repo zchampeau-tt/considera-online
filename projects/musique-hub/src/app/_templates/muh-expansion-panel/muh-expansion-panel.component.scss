@@ -1,0 +1,24 @@
+@import '../../../variables';
+
+.body-expansion-panel {
+  ::ng-deep .mat-expansion-panel-body { padding: 0; }
+  .panel-header {
+    padding: 0 $fib-21;
+    .header-title {
+      font-size: $fib-21;
+      font-family: "coolveticaRg", serif;
+    }
+  }
+  .panel-groups {
+    display: flex;
+    flex-direction: column;
+    padding: $fib-21;
+    row-gap: $fib-34;
+  }
+  .panel-actions {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: $fib-13;
+    padding: $core-16 $fib-21;
+  }
+}

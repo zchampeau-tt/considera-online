@@ -1,0 +1,60 @@
+@import '../../../variables';
+
+.content {
+  height: 100%;
+  background-color: $musique-light-grey;
+
+  .content-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    padding: calc($fib-13);
+
+    span {
+      font-size: $fib-21;
+      font-family: "coolveticaRg", serif;
+    }
+  }
+
+  .content-body {
+    display: flex;
+    flex-direction: column;
+    padding: calc($fib-21);
+    overflow-y: auto;
+    flex-grow: 1;
+
+    .body-expansion-panel {
+      max-width: $fib-987;
+
+      .group {
+
+        .input {
+          flex-grow: 1;
+          max-width: calc(33% - ($fib-21 / 2));
+        }
+
+        .multi-input {
+          flex-grow: 1;
+          width: 100%;
+        }
+
+      }
+    }
+
+    .login-panel {
+      max-width: $fib-987;
+      padding: $fib-21;
+      .header-title {
+        font-size: $fib-21;
+        font-family: "coolveticaRg", serif;
+      }
+    }
+
+  }
+
+}
+
+mat-divider {
+  background-color: $light-divider;
+}
