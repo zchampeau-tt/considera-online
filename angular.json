@@ -79,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "considera-dev:build:production"
+              "browserTarget": "considera-dev:build:production"
             },
             "development": {
-              "buildTarget": "considera-dev:build:development"
+              "browserTarget": "considera-dev:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "considera-dev:build"
+            "browserTarget": "considera-dev:build"
           }
         },
         "test": {
@@ -192,10 +192,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "musique-hub:build:production"
+              "browserTarget": "musique-hub:build:production"
             },
             "development": {
-              "buildTarget": "musique-hub:build:development"
+              "browserTarget": "musique-hub:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -203,7 +203,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "musique-hub:build"
+            "browserTarget": "musique-hub:build"
           }
         },
         "test": {
