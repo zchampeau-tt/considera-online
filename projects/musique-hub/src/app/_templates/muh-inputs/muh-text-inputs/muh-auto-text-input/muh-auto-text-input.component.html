@@ -1,4 +1,20 @@
-<form>
+<form *ngIf="!multi">
+  <mat-form-field class="mat-input-field" appearance="outline" color="accent">
+    <mat-label>{{ label }}</mat-label>
+    <input [formControl]="formControl"
+           [matAutocomplete]="auto"
+           matInput
+           type="text"
+           required="false">
+    <mat-autocomplete #auto="matAutocomplete"  (optionSelected)="singleSelected($event)">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<form *ngIf="multi">
   <mat-form-field class="mat-input-field" appearance="outline" color="accent">
     <mat-label>{{ label }}</mat-label>
     <mat-chip-grid #chipGrid>
@@ -18,7 +34,7 @@
            (matChipInputTokenEnd)="add($event)"
            #optionInput>
     <mat-icon matSuffix>{{ icon }}</mat-icon>
-    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="add($event)" (opened)="load()" #autocompleteTrigger>
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
         {{option}}
       </mat-option>
