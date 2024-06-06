@@ -36,6 +36,11 @@ import { MuhMultiTextInputComponent } from './_templates/muh-inputs/muh-text-inp
 import { MuhAutoTextInputComponent } from './_templates/muh-inputs/muh-text-inputs/muh-auto-text-input/muh-auto-text-input.component';
 import {MatChipsModule} from "@angular/material/chips";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { MusiqueAddArtistComponent } from './musique-hub/musique-add/musique-add-artist/musique-add-artist.component';
+import { MusiqueAddGenreComponent } from './musique-hub/musique-add/musique-add-genre/musique-add-genre.component';
+import { MusiqueAddAlbumComponent } from './musique-hub/musique-add/musique-add-album/musique-add-album.component';
+import { MusiqueAddSongComponent } from './musique-hub/musique-add/musique-add-song/musique-add-song.component';
+import { MusiqueAddCatalogComponent } from './musique-hub/musique-add/musique-add-catalog/musique-add-catalog.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -54,7 +59,12 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     MuhSingleTextInputComponent,
     MuhDateInputComponent,
     MuhMultiTextInputComponent,
-    MuhAutoTextInputComponent
+    MuhAutoTextInputComponent,
+    MusiqueAddArtistComponent,
+    MusiqueAddGenreComponent,
+    MusiqueAddAlbumComponent,
+    MusiqueAddSongComponent,
+    MusiqueAddCatalogComponent
   ],
   exports: [
     AppComponent,
