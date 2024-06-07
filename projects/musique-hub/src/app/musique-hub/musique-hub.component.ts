@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {MusiqueService} from "../../services/app/musique/musique.service";
-import {User} from "../../models/app/musique/user.model";
 import {MuhLoginDialogComponent} from "../_dialogs/muh-login-dialog/muh-login-dialog.component";
-import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {
+  MusiqueListComponent
+} from "./musique-list/component/musique-list.component";
+import {PageEnum} from "./enum/page.enum";
 
 @Component({
   selector: 'musique-hub',
@@ -11,16 +14,17 @@ import {MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog
 })
 export class MusiqueHubComponent {
 
-  public currentPage: string = 'home';
-
+  public currentPage: PageEnum = PageEnum.HOME;
   public usernameInput: string = '';
   public passwordInput: string = '';
   public lastLoginStatus: string = '';
 
+  @ViewChild(MusiqueListComponent) private listPage! : MusiqueListComponent;
+
   public constructor(private _dialog: MatDialog,
                      private _musiqueService: MusiqueService) {
     this.getUsers();
-    this.currentPage = 'add';
+    this.currentPage = PageEnum.ADD;
   }
 
   public getUsers(): void {
@@ -31,19 +35,24 @@ export class MusiqueHubComponent {
 
   public openLogin(): void {
     // Opening the dialog without custom configuration for simplicity
-    let dialogRef: MatDialogRef<MuhLoginDialogComponent> = this._dialog.open(MuhLoginDialogComponent);
+    let dialogRef: MatDialogRef<MuhLoginDialogComponent> =
+      this._dialog.open(MuhLoginDialogComponent);
 
     // Assign cancelLogin function with preserved context
     dialogRef.componentInstance.cancelLogin = dialogRef.close.bind(dialogRef);
   }
 
-  public isCurrentPage(page: string): boolean {
+  public isCurrentPage(page: PageEnum): boolean {
     return this.currentPage == page;
   }
 
-  public setCurrentPage(page: string): void {
+  public setCurrentPage(page: PageEnum): void {
     this.currentPage = page;
+    if (page === PageEnum.LIST && this.listPage) {
+      this.listPage.onView();
+    }
   }
 
   protected readonly MuhLoginDialogComponent = MuhLoginDialogComponent;
+  protected readonly PageEnum = PageEnum;
 }

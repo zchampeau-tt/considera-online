@@ -17,7 +17,7 @@
 
   <div class="drawer">
     <div class="drawer-list-start">
-      <div class="drawer-list-item" (click)="setCurrentPage('home')">
+      <div class="drawer-list-item" (click)="setCurrentPage(PageEnum.HOME)">
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </div>
@@ -25,14 +25,15 @@
         <mat-icon>search</mat-icon>
         <span>Search</span>
       </div>
-      <div class="drawer-list-item"  (click)="setCurrentPage('list')">
+      <div class="drawer-list-item"  (click)="setCurrentPage(PageEnum.LIST)">
         <mat-icon>list</mat-icon>
         <span>List</span>
       </div>
     </div>
 
     <div class="drawer-list-end">
-      <button mat-flat-button class="drawer-list-item add" color="accent" (click)="setCurrentPage('add')">
+      <button mat-flat-button class="drawer-list-item add" color="accent"
+              (click)="setCurrentPage(PageEnum.ADD)">
         <mat-icon>add</mat-icon>
         <span>Add</span>
       </button>
@@ -40,9 +41,9 @@
   </div>
 
   <mat-divider [vertical]="true"></mat-divider>
-  <app-musique-home [hidden]="!isCurrentPage('home')"></app-musique-home>
-  <app-musique-add [hidden]="!isCurrentPage('add')"></app-musique-add>
-  <app-musique-list [hidden]="!isCurrentPage('list')"></app-musique-list>
+  <app-musique-home [hidden]="!isCurrentPage(PageEnum.HOME)"></app-musique-home>
+  <app-musique-add [hidden]="!isCurrentPage(PageEnum.ADD)"></app-musique-add>
+  <app-musique-list [hidden]="!isCurrentPage(PageEnum.LIST)"></app-musique-list>
 
 </div>
 

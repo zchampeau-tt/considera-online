@@ -28,7 +28,7 @@ import { MuhLoginDialogComponent } from './_dialogs/muh-login-dialog/muh-login-d
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import { MusiqueListComponent } from './musique-hub/musique-list/musique-list.component';
+import { MusiqueListComponent } from './musique-hub/musique-list/component/musique-list.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import { MuhSingleTextInputComponent } from './_templates/muh-inputs/muh-text-inputs/muh-single-text-input/muh-single-text-input.component';
 import { MuhDateInputComponent } from './_templates/muh-inputs/muh-date-input/muh-date-input.component';
@@ -41,6 +41,15 @@ import { MusiqueAddGenreComponent } from './musique-hub/musique-add/musique-add-
 import { MusiqueAddAlbumComponent } from './musique-hub/musique-add/musique-add-album/musique-add-album.component';
 import { MusiqueAddSongComponent } from './musique-hub/musique-add/musique-add-song/musique-add-song.component';
 import { MusiqueAddCatalogComponent } from './musique-hub/musique-add/musique-add-catalog/musique-add-catalog.component';
+import {
+  MatNestedTreeNode,
+  MatTree, MatTreeModule,
+  MatTreeNode,
+  MatTreeNodeDef,
+  MatTreeNodePadding,
+  MatTreeNodeToggle
+} from "@angular/material/tree";
+import {MatListItem, MatNavList} from "@angular/material/list";
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -70,6 +79,7 @@ import { MusiqueAddCatalogComponent } from './musique-hub/musique-add/musique-ad
     AppComponent,
     MusiqueHubComponent,
     MusiqueHomeComponent,
+    MusiqueListComponent,
     MusiqueAddComponent,
     MuhExpansionPanelComponent,
     MuhInputRowComponent,
@@ -95,7 +105,7 @@ import { MusiqueAddCatalogComponent } from './musique-hub/musique-add/musique-ad
     MatSnackBarModule,
     FormsModule,
     MatExpansionModule,
-    MatDialogModule, MatFormFieldModule, MatProgressSpinnerModule, MatGridListModule, MatChipsModule, MatButtonToggleModule,
+    MatDialogModule, MatFormFieldModule, MatProgressSpinnerModule, MatGridListModule, MatChipsModule, MatButtonToggleModule, MatTreeModule, MatTreeNode, MatTreeNodePadding, MatNestedTreeNode, MatTreeNodeDef, MatListItem, MatTreeNodeToggle, MatNavList,
   ],
   providers: []
 })
