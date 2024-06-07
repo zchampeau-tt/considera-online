@@ -29,11 +29,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/considera-dev",
+            "outputPath": {
+              "base": "dist/considera-dev"
+            },
             "index": "projects/considera-dev/src/index.html",
-            "main": "projects/considera-dev/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -46,7 +47,8 @@
               "projects/musique-hub/src/musique-theme.scss",
               "projects/considera-dev/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/considera-dev/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -141,11 +143,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/musique-hub",
+            "outputPath": {
+              "base": "dist/musique-hub"
+            },
             "index": "projects/musique-hub/src/index.html",
-            "main": "projects/musique-hub/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -159,7 +162,8 @@
               "projects/musique-hub/src/styles.scss",
               "projects/musique-hub/src/musique-theme.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/musique-hub/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -178,9 +182,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
