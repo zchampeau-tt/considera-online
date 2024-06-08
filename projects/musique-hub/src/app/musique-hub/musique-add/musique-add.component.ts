@@ -18,8 +18,8 @@ export class MusiqueAddComponent {
     this.loadGenres();
   }
 
-  public get genreOptions(): string[] {
-    return this._genreCache.map((genre: Genre) => genre.name);
+  public get genreOptions(): Genre[] {
+    return this._genreCache;
   }
 
   public loadGenres(): void {

@@ -6,5 +6,7 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./muh-expansion-panel.component.scss']
 })
 export class MuhExpansionPanelComponent {
-  @Input() public title: string = ''
+  @Input() public title: string = '';
+  @Input() public description: string = '';
+  @Input() public expanded: boolean = true;
 }

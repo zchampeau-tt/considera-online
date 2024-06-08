@@ -1,12 +1,26 @@
 @import '../../../variables';
 
 .body-expansion-panel {
-  ::ng-deep .mat-expansion-panel-body { padding: 0; }
+  ::ng-deep .mat-expansion-panel-body {
+    padding: 0;
+  }
   .panel-header {
     padding: 0 $fib-21;
     .header-title {
       font-size: $fib-21;
       font-family: "coolveticaRg", serif;
+    }
+    .header-description {
+      font-size: $core-18;
+      font-family: "coolveticaRg", serif;
+
+      span {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
   .panel-groups {

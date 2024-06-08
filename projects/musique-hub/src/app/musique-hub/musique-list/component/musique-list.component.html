@@ -8,6 +8,36 @@
 
   <div class="content-body">
 
+    <mat-accordion class="example-headers-align" multi>
+      <muh-expansion-panel
+        class="body-expansion-panel"
+        [title]="genre.genre.name"
+        [description]="genre.genre.description"
+        [expanded]="false"
+        *ngFor="let genre of genres">
+        <ng-container groups>
+          {{ genre.genre.description }}
+          <mat-accordion class="example-headers-align" multi>
+            <muh-expansion-panel
+              class="body-expansion-panel group"
+              [title]="subGenre.genre.name"
+              [description]="subGenre.genre.description"
+              *ngFor="let subGenre of genre.childGenres">
+
+              <ng-container groups>
+                Top 10 Albums
+              </ng-container>
+            </muh-expansion-panel>
+          </mat-accordion>
+        </ng-container>
+      </muh-expansion-panel>
+    </mat-accordion>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
     <mat-card class="grid-card">
       <mat-card-header>
 

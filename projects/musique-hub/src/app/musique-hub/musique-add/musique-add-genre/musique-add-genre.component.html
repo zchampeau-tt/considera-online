@@ -6,14 +6,14 @@
         <muh-input-row>
           <ng-container inputs>
 
-            <app-muh-auto-text-input
+            <muh-auto-text-input
               class="input-x1"
               [label]="'Genre'"
               [icon]="'music_note'"
               [required]="true"
               [multi]="true"
               [allowNew]="true"
-              [options]="genreOptions"
+              [options]="getGenreOptions()"
               (inputValue)="setGenresToAdd($event)"
               #genresToAddInput/>
             <!-- ask chat gpt how to turn properties [multi]="true" into multi, like mat-stroked-button  -->
@@ -38,24 +38,24 @@
 
         <muh-input-row>
           <ng-container inputs>
-            <app-muh-auto-text-input
+            <muh-auto-text-input
               class="input-x3"
               [label]="'Choose a Genre'"
               [icon]="'music_note'"
               [required]="true"
               [multi]="false"
               [allowNew]="false"
-              [options]="genreOptions"
+              [options]="getGenreOptions()"
               (inputValue)="setGenresToAssign($event)"
               #genresToAssignInput/>
-            <app-muh-auto-text-input
+            <muh-auto-text-input
               class="input-x3"
               [label]="'Choose Subgenre(s)'"
               [icon]="'music_note'"
               [required]="true"
               [multi]="true"
               [allowNew]="false"
-              [options]="genreOptions"
+              [options]="getGenreOptions()"
               (inputValue)="setSubgenresToAssign($event)"
               #subgenresToAssignInput/>
             <!-- ask chat gpt how to turn properties [multi]="true" into multi, like mat-stroked-button  -->

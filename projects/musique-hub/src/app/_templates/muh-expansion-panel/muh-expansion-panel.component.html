@@ -1,9 +1,12 @@
-<mat-expansion-panel class="body-expansion-panel" expanded="true">
+<mat-expansion-panel class="body-expansion-panel" [expanded]="expanded">
 
   <mat-expansion-panel-header class="panel-header">
     <mat-panel-title class="header-title">
       <span>{{ title }}</span>
     </mat-panel-title>
+    <mat-panel-description class="header-description">
+      <span>{{ description }}</span>
+    </mat-panel-description>
   </mat-expansion-panel-header>
 
   <mat-divider></mat-divider>

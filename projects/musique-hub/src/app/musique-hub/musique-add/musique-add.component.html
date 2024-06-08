@@ -9,6 +9,7 @@
   <div class="content-body" *ngIf="MuhLoginDialogComponent.loggedIn()">
     <app-musique-add-artist class="body-expansion-panel" [genreOptions]="genreOptions"/>
     <app-musique-add-genre class="body-expansion-panel" [genreOptions]="genreOptions" (genreDataChanged)="loadGenres()"/>
+    <app-musique-modify-genre class="body-expansion-panel" [genreOptions]="genreOptions" (genreDataChanged)="loadGenres()"/>
     <app-musique-add-album class="body-expansion-panel" [genreOptions]="genreOptions"/>
     <app-musique-add-song class="body-expansion-panel" [genreOptions]="genreOptions"/>
     <app-musique-add-catalog class="body-expansion-panel" [genreOptions]="genreOptions"/>

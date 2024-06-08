@@ -12,6 +12,7 @@ import {Genre} from "../../../models/app/musique/genre.model";
 })
 export class MusiqueService {
   private readonly GET_USERS_ACTION = 'getUsers';
+  private readonly GET_GENRE_ACTION = 'getGenre';
   private readonly GET_GENRES_ACTION = 'getGenres';
   private readonly ADD_ARTIST_ACTION = 'addArtist';
   private readonly ADD_GENRES_ACTION = 'addGenres';
@@ -36,6 +37,13 @@ export class MusiqueService {
       this.genreCache = genres;
     });
     return genresObs as Observable<Genre[]>;
+  }
+
+  public getGenre(genreId: string): Observable<Genre> {
+    return this._httpMusiqueHubService.get(
+      this.GET_GENRE_ACTION,
+      new HttpParams().append('genreId', genreId)
+    ) as Observable<Genre>;
   }
 
   public setGenreCache(): void {
