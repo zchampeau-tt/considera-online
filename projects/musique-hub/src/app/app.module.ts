@@ -50,6 +50,9 @@ import {
   MatTreeNodeToggle
 } from "@angular/material/tree";
 import {MatListItem, MatNavList} from "@angular/material/list";
+import {
+  MusiqueModifyGenreComponent
+} from "./musique-hub/musique-add/musique-modify-genre/musique-modify-genre.component";
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -71,6 +74,7 @@ import {MatListItem, MatNavList} from "@angular/material/list";
     MuhAutoTextInputComponent,
     MusiqueAddArtistComponent,
     MusiqueAddGenreComponent,
+    MusiqueModifyGenreComponent,
     MusiqueAddAlbumComponent,
     MusiqueAddSongComponent,
     MusiqueAddCatalogComponent

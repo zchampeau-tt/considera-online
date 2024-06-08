@@ -39,14 +39,14 @@
 
         <muh-input-row>
           <ng-container inputs>
-            <app-muh-auto-text-input
+            <muh-auto-text-input
               class="input-x3"
               [label]="'Genres'"
               [icon]="'music_note'"
               [required]="false"
               [multi]="true"
               [allowNew]="false"
-              [options]="genreOptions"
+              [options]="getGenreOptions()"
               (inputValue)="setGenreInput($event)"/>
           </ng-container>
         </muh-input-row>

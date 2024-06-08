@@ -6,7 +6,7 @@ import {COMMA, ENTER} from "@angular/cdk/keycodes";
 import {MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 
 @Component({
-  selector: 'app-muh-auto-text-input',
+  selector: 'muh-auto-text-input',
   templateUrl: './muh-auto-text-input.component.html',
   styleUrls: ['./muh-auto-text-input.component.scss']
 })
@@ -17,7 +17,12 @@ export class MuhAutoTextInputComponent implements OnInit {
   @Input() public multi: boolean = false;
   @Input() public allowNew: boolean = false;
   @Input() public options: string[] = [];
-  @Output() public inputValue: EventEmitter<string[]> = new EventEmitter<string[]>();
+  @Output() public inputValue: EventEmitter<string[]> =
+    new EventEmitter<string[]>();
+  @Output() public inputValueIndex: EventEmitter<number> =
+    new EventEmitter<number>();
+  @Output() public onInputChange: EventEmitter<void> =
+    new EventEmitter<void>();
   @ViewChild('optionInput') public optionInput: ElementRef<HTMLInputElement> | undefined;
 
   public separatorKeysCodes: number[] = [ENTER, COMMA];
@@ -50,6 +55,8 @@ export class MuhAutoTextInputComponent implements OnInit {
       if ((this.options.includes(trimmed) || this.allowNew) && !this.selectedOptions.includes(trimmed))
         this.selectedOptions.push(trimmed);
     });
+
+    this.onInputChange.emit();
   }
 
   public load(): void {
@@ -71,6 +78,7 @@ export class MuhAutoTextInputComponent implements OnInit {
       this.optionInput.nativeElement.value = '';
 
     this._onInputChange();
+    this.inputValueIndex.emit(this.options.indexOf(value));
   }
 
   public clear(): void {

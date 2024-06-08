@@ -16,7 +16,7 @@ export class MusiqueAddGenreComponent {
   public genresToAdd: string[] = [];
   public genresToAssign: string[] = [];
   public subgenresToAssign: string[] = [];
-  @Input() genreOptions: string[] = [];
+  @Input() genreOptions: Genre[] = [];
   @Output() public genreDataChanged: EventEmitter<void> = new EventEmitter<void>();
   @ViewChild('genresToAddInput') public genresToAddInput = new MuhAutoTextInputComponent();
   @ViewChild('genresToAssignInput') public genresToAssignInput = new MuhAutoTextInputComponent();
@@ -35,6 +35,10 @@ export class MusiqueAddGenreComponent {
 
   public setSubgenresToAssign(value: string[]): void {
     this.subgenresToAssign = value;
+  }
+
+  public getGenreOptions(): string[] {
+    return this.genreOptions.map(x => x.name);
   }
 
   public addGenres(): void {

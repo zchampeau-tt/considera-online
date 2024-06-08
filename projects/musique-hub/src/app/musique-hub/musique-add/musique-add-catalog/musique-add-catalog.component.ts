@@ -3,6 +3,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {MusiqueService} from "../../../../services/app/musique/musique.service";
 import {MuhLoginDialogComponent} from "../../../_dialogs/muh-login-dialog/muh-login-dialog.component";
 import {Artist} from "../../../../models/app/musique/artist.model";
+import {Genre} from "../../../../models/app/musique/genre.model";
 
 @Component({
   selector: 'app-musique-add-catalog',
@@ -15,7 +16,7 @@ export class MusiqueAddCatalogComponent {
   public formDateInput: string = '';
   public bioInput: string = '';
   public addArtistGenreInput: string[] = [];
-  @Input() genreOptions: string[] = [];
+  @Input() genreOptions: Genre[] = [];
 
   public constructor(private _snack: MatSnackBar,
                      private _musicService: MusiqueService) {}
